@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     dir ('terraform') {
-                bat "terraform apply -input=false tfplan" }
+                        bat "terraform apply -input=false tfplan" }
                 }
             }
         }
