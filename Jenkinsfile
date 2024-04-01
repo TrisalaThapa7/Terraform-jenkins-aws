@@ -47,7 +47,10 @@ pipeline {
 
         stage('Apply') {
             steps {
-                bat "pwd;cd terraform/ ; terraform apply -input=false tfplan"
+                script {
+                    dir ('terraform') {
+                bat "terraform apply -input=false tfplan" }
+                }
             }
         }
     }
